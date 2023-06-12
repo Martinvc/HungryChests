@@ -18,7 +18,7 @@ public class ScoreKeeper : MonoBehaviour
 
     private void Start()
     {
-        // When the game starts the game logic is paused, this is helpful for menus
+        // When the game starts the game logic is paused, this is helpful for menu handling
         Time.timeScale = 0;
     }
 
