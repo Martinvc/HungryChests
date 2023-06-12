@@ -19,7 +19,7 @@ public class FpsCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Put the FPS counter result on its text label
+        // Put the FPS counter result on its text label for easy reading
         fps = 1f / Time.deltaTime;
         fpsText.text = "FPS: " + fps.ToString();
     }
