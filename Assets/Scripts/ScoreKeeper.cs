@@ -11,15 +11,20 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] private Text pointsText;
     [SerializeField] private Text lifesText;
     [SerializeField] private GameObject gameOver;
-    [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject restartButton;
     [SerializeField] private ObjectSpawner objectSpawner;
     [SerializeField] private GameObject chest;
+    [SerializeField] private GameObject HomeMenuCanvas;
+    [SerializeField] private GameObject PlayScreenCanvas;
+    [SerializeField] private GameObject HomeMenuAssets;
+    public int[] highScores; 
 
     private void Start()
     {
         // When the game starts the game logic is paused, this is helpful for menu handling
         Time.timeScale = 0;
+        highScores = new int[]{0, 0, 0};
+        CheckSavedScores();
     }
 
     // Update is called once per frame
@@ -34,12 +39,15 @@ public class ScoreKeeper : MonoBehaviour
     {
         gameOver.SetActive(true);
         Time.timeScale = 0;
+        SaveScores();
         restartButton.SetActive(true);
     }
 
     public void startGame()
     {
-        playButton.SetActive(false);
+        HomeMenuAssets.SetActive(false);
+        HomeMenuCanvas.SetActive(false);
+        PlayScreenCanvas.SetActive(true);
         Time.timeScale = 1;
         objectSpawner.gameStarted = true;
     }
@@ -53,5 +61,48 @@ public class ScoreKeeper : MonoBehaviour
         points = 0;
         lifes = 3;
         Time.timeScale = 1;
+    }
+
+    private void CheckSavedScores()
+    {
+        for (int i = 0; i < highScores.Length; i++)
+        {
+            if (PlayerPrefs.GetInt("score_" + i.ToString()) == 0)
+            {
+                PlayerPrefs.SetInt("score_" + i.ToString(), 0);
+            }
+            else
+            {
+                highScores[i] = PlayerPrefs.GetInt("score_" + i.ToString());
+            }
+        }
+    }
+
+    private void SaveScores()
+    {
+        for (int i = 0; i < highScores.Length; i++)
+        {
+            if (points > highScores[i] && highScores[i] != 0)
+            {
+                for (int x = highScores.Length - 1; x >= 0; x--)
+                {
+                    if (x == i)
+                    {
+                        highScores[x] = points;
+                        PlayerPrefs.SetInt("score_" + x.ToString(), points);
+                        break;
+                    }
+                    highScores[x] = highScores[x - 1];
+                    PlayerPrefs.SetInt("score_" + x.ToString(), highScores[x - 1]);
+                }
+                break;
+            }
+            else if (points > highScores[i])
+            {
+                highScores[i] = points;
+                PlayerPrefs.SetInt("score_" + i.ToString(), points);
+                break;
+            }
+        }
     }
 }

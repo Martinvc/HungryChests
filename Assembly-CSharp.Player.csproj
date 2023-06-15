@@ -57,11 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\HandleCameraDistance.cs" />
+    <Compile Include="Assets\Scripts\UpdateHighScores.cs" />
+    <Compile Include="Assets\Scripts\MenuNavigator.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
+    <Compile Include="Assets\Scripts\DeletePlayerPrefsScript.cs" />
     <Compile Include="Assets\Scripts\MoveDown.cs" />
     <Compile Include="Assets\Scripts\ChestController.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
+    <Compile Include="Assets\Scripts\PlayCheastAnimation.cs" />
+    <Compile Include="Assets\Scripts\MainCheastOpenClose.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -702,6 +707,18 @@
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{7FE93948-A2BF-225E-2D6C-AE7F7982CFF4}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.Player.csproj">
+      <Project>{7C4A3135-BD6B-CD8F-95E8-D9B1298FE0E8}</Project>
+      <Name>Animancer.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.Examples.Player.csproj">
+      <Project>{3CC23A6E-07D4-9B53-C041-238C4FECA80C}</Project>
+      <Name>Animancer.Examples.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.FSM.Player.csproj">
+      <Project>{2D9A1D78-524D-2A52-B01C-3621D911DF49}</Project>
+      <Name>Animancer.FSM.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

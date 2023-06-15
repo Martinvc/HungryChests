@@ -57,11 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\HandleCameraDistance.cs" />
+    <Compile Include="Assets\Scripts\UpdateHighScores.cs" />
+    <Compile Include="Assets\Scripts\MenuNavigator.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
+    <Compile Include="Assets\Scripts\DeletePlayerPrefsScript.cs" />
     <Compile Include="Assets\Scripts\MoveDown.cs" />
     <Compile Include="Assets\Scripts\ChestController.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
+    <Compile Include="Assets\Scripts\PlayCheastAnimation.cs" />
+    <Compile Include="Assets\Scripts\MainCheastOpenClose.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -847,6 +852,18 @@
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{1F1BFDBB-CBCE-4817-28E1-A056733D2285}</Project>
       <Name>Unity.VisualScripting.State</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.csproj">
+      <Project>{A979D9FD-1E4C-FFC0-B043-61D176A37E42}</Project>
+      <Name>Animancer</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.Examples.csproj">
+      <Project>{E42AA61C-C79D-E41B-603D-402755DD1E60}</Project>
+      <Name>Animancer.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Animancer.FSM.csproj">
+      <Project>{66D4F00A-6835-1095-0CE0-5FBF019249E9}</Project>
+      <Name>Animancer.FSM</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
