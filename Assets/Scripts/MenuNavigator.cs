@@ -9,9 +9,11 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private GameObject PlayScreenCanvas;
     [SerializeField] private GameObject HighScoreCanvas;
     [SerializeField] private GameObject PauseMenuCanvas;
+    [SerializeField] private GameObject SkinsMenuCanvas;
     [SerializeField] private GameObject HomeMenuAssets;
     [SerializeField] private GameObject HighScoreMenuAssets;
     [SerializeField] private GameObject PauseGameOverMenuAssets;
+    [SerializeField] private GameObject SkinsMenuAssets;
 
     [SerializeField] private UpdateHighScores loadScores;
     [SerializeField] private ScoreKeeper scoreKeeper;
@@ -99,5 +101,21 @@ public class MenuNavigator : MonoBehaviour
         PauseGameOverMenuAssets.SetActive(false);
         PauseMenuCanvas.SetActive(false);
         scoreKeeper.RestartGame();
+    }
+
+    public void HomeToSkinsMenu()
+    {
+        HomeMenuCanvas.SetActive(false);
+        HomeMenuAssets.SetActive(false);
+        SkinsMenuCanvas.SetActive(true);
+        SkinsMenuAssets.SetActive(true);
+    }
+
+    public void SkinsMenuToHome()
+    {
+        HomeMenuCanvas.SetActive(true);
+        HomeMenuAssets.SetActive(true);
+        SkinsMenuCanvas.SetActive(false);
+        SkinsMenuAssets.SetActive(false);
     }
 }

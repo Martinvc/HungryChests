@@ -182,8 +182,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\Utilities\AnimatedParameterCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\Utilities\FileUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\State\WindowState.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\Utilities\Scopes\GUIColorOverride.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\treeview\ItemGui\TimelineClipGUI.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\Utilities\Scopes\GUIColorOverride.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\inspectors\DirectorNamedColorInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\inspectors\AnimationPlayableAssetInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.7.1\Editor\Actions\TrackAction.cs" />

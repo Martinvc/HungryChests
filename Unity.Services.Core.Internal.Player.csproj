@@ -81,8 +81,8 @@
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Registry\DependencyTreeInitializeOrderSorter.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Components\Networking\ReadOnlyHttpResponse.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\AsyncOperation\AsyncOperation.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Registry\CoreRegistry.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Components\Telemetry\IDiagnosticsFactory.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Registry\CoreRegistry.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Registry\DependencyTreeExceptions.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Components\Authentication\IPlayerId.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@1.4.0\Runtime\Core.Internal\Components\Configuration\IProjectConfiguration.cs" />

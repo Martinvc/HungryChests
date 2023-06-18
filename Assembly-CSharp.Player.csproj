@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\ChestController.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
+    <Compile Include="Assets\Scripts\SkinsGridHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
