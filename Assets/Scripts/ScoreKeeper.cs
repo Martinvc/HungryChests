@@ -6,23 +6,22 @@ using UnityEngine.UI;
 public class ScoreKeeper : MonoBehaviour
 {
     public float minDistancePoint;
-    public int points = 0;
-    public int lifes = 3;
+    [HideInInspector] public int points;
+    [HideInInspector] public int lifes;
+    [SerializeField] private int gameLifes;
     [SerializeField] private Text pointsText;
     [SerializeField] private Text lifesText;
-    [SerializeField] private GameObject gameOver;
-    [SerializeField] private GameObject restartButton;
+    [SerializeField] private MenuNavigator menuNavigator;
     [SerializeField] private ObjectSpawner objectSpawner;
-    [SerializeField] private GameObject chest;
-    [SerializeField] private GameObject HomeMenuCanvas;
-    [SerializeField] private GameObject PlayScreenCanvas;
-    [SerializeField] private GameObject HomeMenuAssets;
-    public int[] highScores; 
+    public GameObject chest;
+    [HideInInspector] public int[] highScores;
 
     private void Start()
     {
         // When the game starts the game logic is paused, this is helpful for menu handling
         Time.timeScale = 0;
+        points = 0;
+        lifes = gameLifes;
         highScores = new int[]{0, 0, 0};
         CheckSavedScores();
     }
@@ -37,25 +36,24 @@ public class ScoreKeeper : MonoBehaviour
 
     public void GameOver()
     {
-        gameOver.SetActive(true);
         Time.timeScale = 0;
         SaveScores();
-        restartButton.SetActive(true);
+        menuNavigator.ShowGameOverScreen();
     }
 
     public void startGame()
     {
-        HomeMenuAssets.SetActive(false);
-        HomeMenuCanvas.SetActive(false);
-        PlayScreenCanvas.SetActive(true);
+        points = 0;
+        lifes = gameLifes;
         Time.timeScale = 1;
+        chest.transform.position = new Vector3(0, chest.transform.position.y, chest.transform.position.z);
+        objectSpawner.deleteSpawns();
         objectSpawner.gameStarted = true;
     }
 
     public void RestartGame()
     {
-        restartButton.SetActive(false);
-        gameOver.SetActive(false);
+        menuNavigator.HideGameOverScreen();
         chest.transform.position = new Vector3(0, chest.transform.position.y, chest.transform.position.z);
         objectSpawner.deleteSpawns();
         points = 0;
@@ -78,7 +76,7 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private void SaveScores()
+    public void SaveScores()
     {
         for (int i = 0; i < highScores.Length; i++)
         {
@@ -97,6 +95,10 @@ public class ScoreKeeper : MonoBehaviour
                 }
                 break;
             }
+            else if (points == highScores[i])
+            {
+                return;
+            }
             else if (points > highScores[i])
             {
                 highScores[i] = points;
@@ -105,4 +107,5 @@ public class ScoreKeeper : MonoBehaviour
             }
         }
     }
+
 }

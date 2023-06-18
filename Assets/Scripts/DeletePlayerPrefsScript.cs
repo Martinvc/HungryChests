@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEditor;
 
 public class DeletePlayerPrefsScript : EditorWindow
@@ -9,4 +9,4 @@ public class DeletePlayerPrefsScript : EditorWindow
         PlayerPrefs.DeleteAll();
         Debug.Log("All player Preferences Deleted!");
     }
-}
+}*/
