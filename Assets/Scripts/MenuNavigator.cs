@@ -10,10 +10,15 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private GameObject HighScoreCanvas;
     [SerializeField] private GameObject PauseMenuCanvas;
     [SerializeField] private GameObject SkinsMenuCanvas;
+    [SerializeField] private GameObject SettingsMenuCanvas;
+    [SerializeField] private GameObject SensitivityMenuCanvas;
     [SerializeField] private GameObject HomeMenuAssets;
     [SerializeField] private GameObject HighScoreMenuAssets;
     [SerializeField] private GameObject PauseGameOverMenuAssets;
     [SerializeField] private GameObject SkinsMenuAssets;
+    [SerializeField] private GameObject SettingsMenuAssets;
+    [SerializeField] private GameObject SensitivityMenuAssets;
+    [SerializeField] private GameObject GamePlayAssets;
 
     [SerializeField] private UpdateHighScores loadScores;
     [SerializeField] private ScoreKeeper scoreKeeper;
@@ -55,6 +60,7 @@ public class MenuNavigator : MonoBehaviour
         PlayScreenCanvas.SetActive(false);
         HomeMenuCanvas.SetActive(true);
         HomeMenuAssets.SetActive(true);
+        scoreKeeper.GameStarted(false);
     }
 
     public void ShowGameOverScreen()
@@ -110,6 +116,8 @@ public class MenuNavigator : MonoBehaviour
         HomeMenuAssets.SetActive(true);
         onPlayScreen = false;
         scoreKeeper.SaveScores();
+        scoreKeeper.DeleteSpawns();
+        scoreKeeper.GameStarted(false);
     }
 
     public void PauseScreenRestartToPlay()
@@ -134,5 +142,40 @@ public class MenuNavigator : MonoBehaviour
         HomeMenuAssets.SetActive(true);
         SkinsMenuCanvas.SetActive(false);
         SkinsMenuAssets.SetActive(false);
+    }
+
+    public void HomeToSettings()
+    {
+        HomeMenuCanvas.SetActive(false);
+        HomeMenuAssets.SetActive(false);
+        SettingsMenuCanvas.SetActive(true);
+        SettingsMenuAssets.SetActive(true);
+    }
+
+    public void SettingsToHome()
+    {
+        HomeMenuCanvas.SetActive(true);
+        HomeMenuAssets.SetActive(true);
+        SettingsMenuCanvas.SetActive(false);
+        SettingsMenuAssets.SetActive(false);
+    }
+
+    public void SettingsToSensitivity()
+    {
+        SettingsMenuCanvas.SetActive(false);
+        SettingsMenuAssets.SetActive(false);
+        GamePlayAssets.SetActive(false);
+        SensitivityMenuCanvas.SetActive(true);
+        SensitivityMenuAssets.SetActive(true);
+        Time.timeScale = 1;
+    }
+
+    public void SensitivityToSettings()
+    {
+        SettingsMenuCanvas.SetActive(true);
+        SettingsMenuAssets.SetActive(true);
+        GamePlayAssets.SetActive(true);
+        SensitivityMenuCanvas.SetActive(false);
+        SensitivityMenuAssets.SetActive(false);
     }
 }

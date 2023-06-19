@@ -47,15 +47,15 @@ public class ScoreKeeper : MonoBehaviour
         lifes = gameLifes;
         Time.timeScale = 1;
         chest.transform.position = new Vector3(0, chest.transform.position.y, chest.transform.position.z);
-        objectSpawner.deleteSpawns();
-        objectSpawner.gameStarted = true;
+        DeleteSpawns();
+        GameStarted(true);
     }
 
     public void RestartGame()
     {
         menuNavigator.HideGameOverScreen();
         chest.transform.position = new Vector3(0, chest.transform.position.y, chest.transform.position.z);
-        objectSpawner.deleteSpawns();
+        DeleteSpawns();
         points = 0;
         lifes = 3;
         Time.timeScale = 1;
@@ -106,6 +106,16 @@ public class ScoreKeeper : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void DeleteSpawns()
+    {
+        objectSpawner.deleteSpawns();
+    }
+
+    public void GameStarted(bool state)
+    {
+        objectSpawner.gameStarted = state;
     }
 
 }
