@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\PlayCheastAnimation.cs" />
     <Compile Include="Assets\Scripts\HandleCameraDistance.cs" />
     <Compile Include="Assets\Scripts\UpdateHighScores.cs" />
+    <Compile Include="Assets\Scripts\SkinsGridHandler.cs" />
     <Compile Include="Assets\Scripts\MenuNavigator.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\DeletePlayerPrefsScript.cs" />
@@ -67,7 +68,6 @@
     <Compile Include="Assets\Scripts\ChestController.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
-    <Compile Include="Assets\Scripts\SkinsGridHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

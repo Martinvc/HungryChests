@@ -10,7 +10,8 @@ public class ChestController : MonoBehaviour
     [SerializeField] private Transform limitRight;
     [SerializeField] private MainCheastOpenClose cheastAnimator;
     private Touch touch;
-    public bool chestOpen = false;
+    public bool chestOpenAnimation = false;
+    public bool chestOpenState = false;
     // Update is called once per frame
     void Update()
     {
@@ -44,18 +45,18 @@ public class ChestController : MonoBehaviour
 
     void openChest()
     {
-        if (!chestOpen)
+        if (!chestOpenAnimation)
         {
-            chestOpen = true;
+            chestOpenAnimation = true;
             cheastAnimator.PlayOpenAnimation();
         }
     }
 
     void closeChest()
     {
-        if (chestOpen)
+        if (chestOpenAnimation)
         {
-            chestOpen = false;
+            chestOpenAnimation = false;
             cheastAnimator.PlayCloseAnimation();
         }
     }

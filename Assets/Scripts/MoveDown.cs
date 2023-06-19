@@ -32,11 +32,11 @@ public class MoveDown : MonoBehaviour
             // when the object hits its lowest point (destroyPointY), it checks if the chest is near enough to trigger an action
             if (Vector3.Distance(transform.position, chest.transform.position) <= gameHandler.GetComponent<ScoreKeeper>().minDistancePoint)
             {
-                if (!isBomb && chest.GetComponent<ChestController>().chestOpen)
+                if (!isBomb && chest.GetComponent<ChestController>().chestOpenState)
                 {
                     gameHandler.GetComponent<ScoreKeeper>().points += 1;
                 }
-                else if (isBomb && chest.GetComponent<ChestController>().chestOpen)
+                else if (isBomb && chest.GetComponent<ChestController>().chestOpenState)
                 {
                     gameHandler.GetComponent<ScoreKeeper>().lifes -= 1;
                     if (gameHandler.GetComponent<ScoreKeeper>().lifes == 0)

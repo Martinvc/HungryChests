@@ -18,6 +18,21 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private UpdateHighScores loadScores;
     [SerializeField] private ScoreKeeper scoreKeeper;
 
+    private bool gamefocus = true;
+    private bool onPlayScreen = false;
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            gamefocus = false;
+        }
+        else if (focus && !gamefocus && onPlayScreen)
+        {
+            gamefocus = true;
+            GameToPauseScreen();
+        }
+    }
     public void HomeToHighscores()
     {
         HomeMenuCanvas.SetActive(false);
@@ -64,6 +79,7 @@ public class MenuNavigator : MonoBehaviour
         HomeMenuCanvas.SetActive(false);
         PlayScreenCanvas.SetActive(true);
         HideGameOverScreen();
+        onPlayScreen = true;
         scoreKeeper.startGame();
     }
 
@@ -92,6 +108,7 @@ public class MenuNavigator : MonoBehaviour
         PauseMenuCanvas.SetActive(false);
         HomeMenuCanvas.SetActive(true);
         HomeMenuAssets.SetActive(true);
+        onPlayScreen = false;
         scoreKeeper.SaveScores();
     }
 
