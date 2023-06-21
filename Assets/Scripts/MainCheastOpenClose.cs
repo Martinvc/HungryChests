@@ -7,6 +7,7 @@ public class MainCheastOpenClose : MonoBehaviour
     [SerializeField] private Animancer.AnimancerComponent Animancer;
     [SerializeField] private AnimationClip AnimationOpen;
     [SerializeField] private AnimationClip AnimationClose;
+    [SerializeField] private bool isGamePlayChest = false;
     private ChestController chest;
 
     private void Start()
@@ -25,11 +26,17 @@ public class MainCheastOpenClose : MonoBehaviour
 
     public void chestStateOpen()
     {
-        chest.chestOpenState = true;
+        if (isGamePlayChest)
+        {
+            chest.chestOpenState = true;
+        }
     }
 
     public void chestStateClose()
     {
-        chest.chestOpenState = false;
+        if (isGamePlayChest)
+        {
+            chest.chestOpenState = false;
+        }
     }
 }

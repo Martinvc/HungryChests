@@ -29,7 +29,6 @@ public class SliderValueHandler : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void UpdateSliderValue()
     {
         PlayerPrefs.SetFloat(saveValueName, slider.value);

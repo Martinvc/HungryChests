@@ -63,12 +63,13 @@
     <Compile Include="Assets\Scripts\MenuNavigator.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\DeletePlayerPrefsScript.cs" />
+    <Compile Include="Assets\Scripts\GyroControl.cs" />
     <Compile Include="Assets\Scripts\MoveDown.cs" />
+    <Compile Include="Assets\Scripts\SliderValueHandler.cs" />
     <Compile Include="Assets\Scripts\MainCheastOpenClose.cs" />
     <Compile Include="Assets\Scripts\ChestController.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
-    <Compile Include="Assets\Scripts\SliderValueHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

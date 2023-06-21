@@ -9,11 +9,13 @@ public class ChestController : MonoBehaviour
     [SerializeField] private Vector2 ChestSpeedMinMax;
     [SerializeField] private Transform limitLeft;
     [SerializeField] private Transform limitRight;
-    [SerializeField] private MainCheastOpenClose cheastAnimator;
+    [SerializeField] private MainCheastOpenClose chestAnimator;
     [SerializeField] private bool isSettingsChest = false;
     private Touch touch;
+    private bool isTouching = false;
     public bool chestOpenAnimation = false;
     public bool chestOpenState = false;
+    [HideInInspector] public bool useGyro = false;
 
 
     private void Start()
@@ -28,15 +30,40 @@ public class ChestController : MonoBehaviour
             chestSpeed = PlayerPrefs.GetFloat("chestSpeed");
         }
     }
+    private void OnEnable()
+    {
+        if (PlayerPrefs.GetInt("useGyro") == 0)
+        {
+            useGyro = false;
+        }
+        else
+        {
+            useGyro = true;
+        }
+    }
     void Update()
     {
         if (isSettingsChest)
         {
-            SensitivityChestMove();
+            if (useGyro)
+            {
+                SensitivityChestMoveGyro();
+            }
+            else
+            {
+                SensitivityChestMove();
+            }
         }
         else
         {
-            GamePlayChestMove();
+            if (useGyro)
+            {
+                SensitivityChestMoveGyro();
+            }
+            else
+            {
+                GamePlayChestMove();
+            }
         }
     }
 
@@ -45,7 +72,7 @@ public class ChestController : MonoBehaviour
         if (!chestOpenAnimation)
         {
             chestOpenAnimation = true;
-            cheastAnimator.PlayOpenAnimation();
+            chestAnimator.PlayOpenAnimation();
         }
     }
 
@@ -54,7 +81,7 @@ public class ChestController : MonoBehaviour
         if (chestOpenAnimation)
         {
             chestOpenAnimation = false;
-            cheastAnimator.PlayCloseAnimation();
+            chestAnimator.PlayCloseAnimation();
         }
     }
 
@@ -92,6 +119,7 @@ public class ChestController : MonoBehaviour
     {
         if (Input.touchCount > 0 && (Input.GetTouch(0).position.y <= Screen.height / 3))
         {
+            openChest();
             touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
             {
@@ -109,6 +137,47 @@ public class ChestController : MonoBehaviour
                 chest.transform.position = new Vector3(limitRight.position.x, chest.transform.position.y, chest.transform.position.z);
             }
         }
+        else
+        {
+            closeChest();
+        }
+
+    }
+
+    private void SensitivityChestMoveGyro()
+    {
+
+        chest.transform.position = new Vector3(
+                    chest.transform.position.x + Input.acceleration.x * chestSpeed * 10 * Time.deltaTime,
+                    chest.transform.position.y,
+                    chest.transform.position.z);
+
+        if (chest.transform.position.x <= limitLeft.position.x)
+        {
+            chest.transform.position = new Vector3(limitLeft.position.x, chest.transform.position.y, chest.transform.position.z);
+        }
+        if (chest.transform.position.x >= limitRight.position.x)
+        {
+            chest.transform.position = new Vector3(limitRight.position.x, chest.transform.position.y, chest.transform.position.z);
+        }
+
+        if (Input.touchCount > 0 && (Input.GetTouch(0).position.y <= Screen.height / 3))
+        {
+            touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Ended)
+            {
+                isTouching = !isTouching;
+                if (isTouching)
+                {
+                    openChest();
+                }
+                else
+                {
+                    closeChest();
+                }
+            }
+        }
+
     }
 
     public float convertRange(float originalRangeMin, float originalRangeMax, float newRangeMin, float newRangeMax, float value)
