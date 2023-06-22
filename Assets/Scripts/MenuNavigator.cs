@@ -12,6 +12,7 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private GameObject SkinsMenuCanvas;
     [SerializeField] private GameObject SettingsMenuCanvas;
     [SerializeField] private GameObject SensitivityMenuCanvas;
+    [SerializeField] private GameObject DailyRewardsMenuCanvas;
     [SerializeField] private GameObject HomeMenuAssets;
     [SerializeField] private GameObject HighScoreMenuAssets;
     [SerializeField] private GameObject PauseGameOverMenuAssets;
@@ -19,6 +20,7 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private GameObject SettingsMenuAssets;
     [SerializeField] private GameObject SensitivityMenuAssets;
     [SerializeField] private GameObject GamePlayAssets;
+    [SerializeField] private GameObject DailyRewardsMenuAssets;
 
     [SerializeField] private UpdateHighScores loadScores;
     [SerializeField] private ScoreKeeper scoreKeeper;
@@ -110,14 +112,14 @@ public class MenuNavigator : MonoBehaviour
 
     public void PauseScreenToHome()
     {
+        scoreKeeper.SaveScores();
+        scoreKeeper.DeleteSpawns();
+        scoreKeeper.GameStarted(false);
         PauseGameOverMenuAssets.SetActive(false);
         PauseMenuCanvas.SetActive(false);
         HomeMenuCanvas.SetActive(true);
         HomeMenuAssets.SetActive(true);
         onPlayScreen = false;
-        scoreKeeper.SaveScores();
-        scoreKeeper.DeleteSpawns();
-        scoreKeeper.GameStarted(false);
     }
 
     public void PauseScreenRestartToPlay()
@@ -177,5 +179,23 @@ public class MenuNavigator : MonoBehaviour
         GamePlayAssets.SetActive(true);
         SensitivityMenuCanvas.SetActive(false);
         SensitivityMenuAssets.SetActive(false);
+    }
+
+    public void HomeToDailyRewards()
+    {
+        HomeMenuCanvas.SetActive(false);
+        HomeMenuAssets.SetActive(false);
+        DailyRewardsMenuCanvas.SetActive(true);
+        DailyRewardsMenuAssets.SetActive(true);
+        Time.timeScale = 1;
+    }
+
+    public void DailyRewardsToHome()
+    {
+        HomeMenuCanvas.SetActive(true);
+        HomeMenuAssets.SetActive(true);
+        DailyRewardsMenuCanvas.SetActive(false);
+        DailyRewardsMenuAssets.SetActive(false);
+        Time.timeScale = 0;
     }
 }

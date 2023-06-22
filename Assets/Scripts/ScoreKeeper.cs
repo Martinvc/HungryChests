@@ -78,6 +78,8 @@ public class ScoreKeeper : MonoBehaviour
 
     public void SaveScores()
     {
+        //update gold
+        PlayerPrefs.SetInt("gold", points + PlayerPrefs.GetInt("gold"));
         for (int i = 0; i < highScores.Length; i++)
         {
             if (points > highScores[i] && highScores[i] != 0)

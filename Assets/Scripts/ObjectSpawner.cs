@@ -6,77 +6,59 @@ public class ObjectSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] objects;
     [SerializeField] private Transform[] pipeSpawn;
-    [SerializeField] private Vector2 spawnRate;
-    private bool spawn1 = true;
-    private bool spawn2 = true;
-    private bool spawn3 = true;
+    [SerializeField] private Vector2[] spawnRate;
+    private ScoreKeeper scoreKeeper;
     public bool gameStarted = false;
+    [SerializeField] private int[] pointsForSpeedIncrese;
+    [SerializeField] private float speedIncrease;
+    private int currentSpeedLevel = -1;
+    private int currentSpawnRate = -1;
+    public float speed;
+    private bool[] spawnStates;
+
+    private void Start()
+    {
+        scoreKeeper = GetComponent<ScoreKeeper>();
+        spawnStates = new bool[pipeSpawn.Length];
+        for (int i = 0; i < pipeSpawn.Length; i++)
+        {
+            spawnStates[i] = true;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (gameStarted)
         {
+            HandleLevelIncrease();
             startSpawning();
         }
     }
 
-    IEnumerator Wait(string pipe)
+    IEnumerator Wait(int pipe)
     {
 
-        yield return new WaitForSeconds(Random.Range(spawnRate.x, spawnRate.y));
+        yield return new WaitForSeconds(Random.Range(spawnRate[currentSpawnRate].x, spawnRate[currentSpawnRate].y));
 
-        if (pipe == "1")
-        {
-            spawn1 = true;
-        }
-
-        if (pipe == "2")
-        {
-            spawn2 = true;
-        }
-
-        if (pipe == "3")
-        {
-            spawn3 = true;
-        }
+        spawnStates[pipe] = true;
 
     }
 
     private void startSpawning()
     {
-        // 3 hard-coded pipes that will spawn a random object (fruit or bomb), the spawn rate is a random between spawnRate.x and spawnRate.y
-        if (spawn1)
+        for (int i = 0; i < pipeSpawn.Length; i++)
         {
-            int obj = Random.Range(0, objects.Length - 1);
-            if (obj >= 10)
-            { Instantiate(objects[obj], pipeSpawn[0].position, Quaternion.Euler(0, 180, 45)).transform.parent = transform; }
-            else
-            { Instantiate(objects[obj], pipeSpawn[0].position, Quaternion.Euler(-90, 0, 0)).transform.parent = transform; }
-            spawn1 = false;
-            StartCoroutine(Wait("1"));
-        }
-
-        if (spawn2)
-        {
-            int obj = Random.Range(0, objects.Length - 1);
-            if (obj >= 10)
-            { Instantiate(objects[obj], pipeSpawn[1].position, Quaternion.Euler(0, 180, 45)).transform.parent = transform; }
-            else
-            { Instantiate(objects[obj], pipeSpawn[1].position, Quaternion.Euler(-90, 0, 0)).transform.parent = transform; }
-            spawn2 = false;
-            StartCoroutine(Wait("2"));
-        }
-
-        if (spawn3)
-        {
-            int obj = Random.Range(0, objects.Length - 1);
-            if (obj >= 10)
-            { Instantiate(objects[obj], pipeSpawn[2].position, Quaternion.Euler(0, 180, 45)).transform.parent = transform; }
-            else
-            { Instantiate(objects[obj], pipeSpawn[2].position, Quaternion.Euler(-90, 0, 0)).transform.parent = transform; }
-            spawn3 = false;
-            StartCoroutine(Wait("3"));
+            if (spawnStates[i])
+            {
+                int obj = Random.Range(0, objects.Length - 1);
+                if (obj >= 10)
+                { Instantiate(objects[obj], pipeSpawn[i].position, Quaternion.Euler(0, 180, 45)).transform.parent = transform; }
+                else
+                { Instantiate(objects[obj], pipeSpawn[i].position, Quaternion.Euler(-90, 0, 0)).transform.parent = transform; }
+                spawnStates[i] = false;
+                StartCoroutine(Wait(i));
+            }
         }
     }
 
@@ -85,6 +67,28 @@ public class ObjectSpawner : MonoBehaviour
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
+        }
+
+        currentSpeedLevel = -1;
+        currentSpawnRate = -1;
+        speed = 2;
+    }
+
+    private void HandleLevelIncrease()
+    {
+        if (currentSpeedLevel == -1)
+        {
+            currentSpeedLevel += 1;
+            currentSpawnRate += 1;
+        }
+        else if (currentSpeedLevel < pointsForSpeedIncrese.Length && scoreKeeper.points >= pointsForSpeedIncrese[currentSpeedLevel])
+        {
+            speed += speedIncrease;
+            currentSpeedLevel += 1;
+            if (currentSpeedLevel < pointsForSpeedIncrese.Length)
+            {
+                currentSpawnRate += 1;
+            }
         }
     }
 }
