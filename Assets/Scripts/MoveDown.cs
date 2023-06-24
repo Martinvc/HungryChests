@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class MoveDown : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    private float speed;
     [SerializeField] private float destroyPointY;
     [SerializeField] private bool isBomb;
     private GameObject gameHandler;
     private GameObject chest;
+    private ObjectSpawner spawner;
 
     private void Start()
     {
         chest = GameObject.Find("MainChest");
         gameHandler = GameObject.Find("GameHandler");
+        spawner = transform.parent.GetComponent<ObjectSpawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //read speed value
+        speed = spawner.speed;
+
         //Move object down
         transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
 
@@ -32,11 +37,11 @@ public class MoveDown : MonoBehaviour
             // when the object hits its lowest point (destroyPointY), it checks if the chest is near enough to trigger an action
             if (Vector3.Distance(transform.position, chest.transform.position) <= gameHandler.GetComponent<ScoreKeeper>().minDistancePoint)
             {
-                if (!isBomb && chest.GetComponent<ChestController>().chestOpen)
+                if (!isBomb && chest.GetComponent<ChestController>().chestOpenState)
                 {
                     gameHandler.GetComponent<ScoreKeeper>().points += 1;
                 }
-                else if (isBomb && chest.GetComponent<ChestController>().chestOpen)
+                else if (isBomb && chest.GetComponent<ChestController>().chestOpenState)
                 {
                     gameHandler.GetComponent<ScoreKeeper>().lifes -= 1;
                     if (gameHandler.GetComponent<ScoreKeeper>().lifes == 0)
@@ -47,5 +52,10 @@ public class MoveDown : MonoBehaviour
             }
             Destroy(transform.gameObject);
         }
+    }
+
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
     }
 }
