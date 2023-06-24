@@ -1,15 +1,3 @@
-fileFormatVersion: 2
-guid: a72885e93c1e4c5449d8f2a4888f2ed7
-labels:
-- Bomb
-- Clock
-- Dynamite
-- Explosive
-- Prop
-- Weapon
-NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+version https://git-lfs.github.com/spec/v1
+oid sha256:1528a672b96f922ede02ce593c8a10cd43d3a5aa52e7cbfd53a146c2fe414de7
+size 259

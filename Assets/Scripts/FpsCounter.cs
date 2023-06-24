@@ -12,8 +12,8 @@ public class FpsCounter : MonoBehaviour
     void Start()
     {
         // Put the screen refresh rate on the text label and set the target frame rate to the same value of refresh rate
-        refreshRateText.text = "Screen Hz:" + Screen.currentResolution.refreshRate.ToString();
-        Application.targetFrameRate = Screen.currentResolution.refreshRate;
+        refreshRateText.text = "Screen Hz:" + Screen.currentResolution.refreshRateRatio.value.ToString();
+        Application.targetFrameRate = (int)Screen.currentResolution.refreshRateRatio.value;
     }
 
     // Update is called once per frame

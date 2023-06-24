@@ -18,6 +18,7 @@ public class ClaimGoldReward : MonoBehaviour
         PlayerPrefs.SetInt("gold", 100 + PlayerPrefs.GetInt("gold"));
         GetComponent<Button>().interactable = false;
         yourGoldLabel.text = "Your Gold: " + PlayerPrefs.GetInt("gold").ToString();
+
     }
 
     private void OnEnable()
@@ -26,6 +27,7 @@ public class ClaimGoldReward : MonoBehaviour
         if (PlayerPrefs.GetString("goldRewardTimestamp") == "")
         {
             GetComponent<Button>().interactable = true;
+            waitUntilLabel.text = "You can claim your Reward!";
         }
         else
         {
