@@ -5,21 +5,31 @@ using UnityEngine;
 public class MoveDown : MonoBehaviour
 {
     private float speed;
-    [SerializeField] private float destroyPointY;
+    private float destroyPointY;
     [SerializeField] private bool isBomb;
     private GameObject gameHandler;
     private GameObject chest;
     private ObjectSpawner spawner;
+    [HideInInspector] public bool canMove = true;
 
     private void Start()
     {
         chest = GameObject.Find("MainChest");
         gameHandler = GameObject.Find("GameHandler");
         spawner = transform.parent.GetComponent<ObjectSpawner>();
+        destroyPointY = spawner.destroyPoint;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (canMove)
+        {
+            Move();
+        }
+    }
+
+    private void Move()
     {
         //read speed value
         speed = spawner.speed;
@@ -52,10 +62,5 @@ public class MoveDown : MonoBehaviour
             }
             Destroy(transform.gameObject);
         }
-    }
-
-    public void SetSpeed(float newSpeed)
-    {
-        speed = newSpeed;
     }
 }

@@ -279,7 +279,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 45df95f9f966e52418e878fe07503b07, type: 3}
+      m_Icon: {fileID: 2800000, guid: c1d802f4bd7c8eb48a24f9917df6cd79, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -738,7 +738,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: DEBUG_MODE_FOLIAGE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

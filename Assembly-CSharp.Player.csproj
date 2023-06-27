@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\Bin\Debug\Player\</OutputPath>
-    <DefineConstants>UNITY_2022_2_21;UNITY_2022_2;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_2_21;UNITY_2022_2;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;DEBUG_MODE_FOLIAGE;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -58,44 +58,102 @@
     <Analyzer Include="E:\2022.2.21f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\Scripts\Misc\SmoothMouseLook.cs" />
     <Compile Include="Assets\Scripts\MenuNavigator.cs" />
     <Compile Include="Assets\Scripts\SkinsGridHandler.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageWindTreeWind.cs" />
     <Compile Include="Assets\Scripts\PlayCheastAnimation.cs" />
     <Compile Include="Assets\Scripts\GyroControl.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\Scripts\Tools\NatureManager.cs" />
     <Compile Include="Assets\Scripts\UpdateHighScores.cs" />
+    <Compile Include="Assets\Scripts\RecenterChest.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageType.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Examples\ExampleRuntimeSettings.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageTerrainListener.cs" />
     <Compile Include="Assets\Scripts\HandleCameraDistance.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliagePainter.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageUtilities.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\Scripts\Tools\WaterReflection.cs" />
     <Compile Include="Assets\Scripts\FpsCounter.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageCaching.cs" />
     <Compile Include="Assets\Scripts\MoveDown.cs" />
     <Compile Include="Assets\Scripts\UpdateGoldLabel.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageDataRuntime.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageColliders.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\Scripts\Misc\FPS_Counter.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageInstance.cs" />
+    <Compile Include="Assets\Scripts\BackButtonCloseApp.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliagePainterRuntime.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Examples\ExampleRuntimeTreeAdder.cs" />
     <Compile Include="Assets\Scripts\ClaimGoldReward.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageRenderer.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageWindTreeUtilities.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\Foliage.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliagePainterEditTime.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Examples\ExampleRuntimeTreeRemover.cs" />
     <Compile Include="Assets\Scripts\DeletePlayerPrefsScript.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageTerrainUtilities.cs" />
     <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageData.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageCell.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\Scripts\Misc\Flythrough.cs" />
     <Compile Include="Assets\Scripts\MainCheastOpenClose.cs" />
     <Compile Include="Assets\Scripts\SliderValueHandler.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\Scripts\Tools\FoliageInteractor.cs" />
     <Compile Include="Assets\Scripts\ChestController.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageColliderData.cs" />
+    <Compile Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Code\FoliageDataSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\WindTree\Tree\WindTree_Billboard.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Foliage\PA_Grass.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Terrain\PA_Planet.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Foliage\PA_TreeWind.shader" />
+    <None Include="Assets\___www.unityassetcollection.com___.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\CritiasUtils.cginc" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Water\PA_Water_River.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\Detail\DetailMetallicDithered.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\Detail\DetailDithered.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Terrain\PA_RockDetail.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\WindTree\Tree\WindTree_Include\WindTreeCommon_Master.cginc" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Effects\PA_Wingflap.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Foliage\PA_FoliageBillboard.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Utility\PA_Grid.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Foliage\PA_GrassOld.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Terrain\PA_Pebbles.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Props\PA_TilingPOM.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Props\PA_SurfaceORM.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Foliage\PA_OtherFoliage.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Effects\PA_CloudCard.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\WindTree\Readme.txt" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\NullShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\WindTree\Grass\WindTree_Grass.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Water\PA_Water_Lake.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Water\Dreamscape_Water.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Terrain\PA_DistantTerrain.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\Shaders\Foliage\PA_TreeWind_Deferred.shader" />
+    <None Include="Assets\Polyart\PolyartStudio\SharedResources\CritiasFoliage\Shader\WindTree\Tree\WindTree_Master.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -662,9 +720,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
+      <Project>{0D87EBA8-50CC-9494-71CF-222D69FE245B}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
+      <Project>{168DACBD-9BF5-686D-BDF1-84A18A6D70D9}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
+      <Project>{50C138C8-A8AD-00D2-DE27-5F506B5D8ACC}</Project>
+      <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
       <Project>{D2181180-1F8D-3E8F-7FFA-9D9B67F4EEA5}</Project>
       <Name>Unity.AI.Navigation.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Player.csproj">
+      <Project>{87BF0A4D-5FCC-2A71-2EA9-0AB468B65A31}</Project>
+      <Name>Unity.Burst.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
       <Project>{7E0130C5-A877-69E1-B47D-7718E286E210}</Project>
@@ -678,9 +752,21 @@
       <Project>{EE781F9F-19AE-6898-746F-EF8ED0B2E4A9}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
+      <Project>{D2EA4FBB-10A4-10C0-219E-FDB7709DCCAB}</Project>
+      <Name>Unity.RenderPipeline.Universal.ShaderLibrary.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
       <Project>{3D2A7BD5-5979-366D-8CB8-886F042470C3}</Project>
       <Name>Unity.Timeline.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
+      <Project>{8AEB7A9A-83AC-2868-4EB6-D67A7048CB3A}</Project>
+      <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Player.csproj">
+      <Project>{CE0818B9-1150-47EA-EA57-1DC85E8503E0}</Project>
+      <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Animancer.Player.csproj">
       <Project>{7C4A3135-BD6B-CD8F-95E8-D9B1298FE0E8}</Project>
@@ -693,6 +779,10 @@
     <ProjectReference Include="Animancer.FSM.Player.csproj">
       <Project>{2D9A1D78-524D-2A52-B01C-3621D911DF49}</Project>
       <Name>Animancer.FSM.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.Player.csproj">
+      <Project>{1CDEBF3F-1789-468F-E251-A2D467D2CDC0}</Project>
+      <Name>Unity.RenderPipelines.Universal.Shaders.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
       <Project>{7FE93948-A2BF-225E-2D6C-AE7F7982CFF4}</Project>

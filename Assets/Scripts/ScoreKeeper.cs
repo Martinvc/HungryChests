@@ -54,6 +54,7 @@ public class ScoreKeeper : MonoBehaviour
     public void RestartGame()
     {
         menuNavigator.HideGameOverScreen();
+        menuNavigator.onPlayScreen = true;
         chest.transform.position = new Vector3(0, chest.transform.position.y, chest.transform.position.z);
         DeleteSpawns();
         points = 0;
@@ -118,6 +119,22 @@ public class ScoreKeeper : MonoBehaviour
     public void GameStarted(bool state)
     {
         objectSpawner.gameStarted = state;
+    }
+
+    public void GameIsPaused(bool isPaused)
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            objectSpawner.gameStarted = false;
+            objectSpawner.SpawnsCanMove(false);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            objectSpawner.gameStarted = true;
+            objectSpawner.SpawnsCanMove(true);
+        }
     }
 
 }

@@ -13,6 +13,8 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private GameObject SettingsMenuCanvas;
     [SerializeField] private GameObject SensitivityMenuCanvas;
     [SerializeField] private GameObject DailyRewardsMenuCanvas;
+    [SerializeField] private GameObject CloseAppPopupMenuCanvas;
+
     [SerializeField] private GameObject HomeMenuAssets;
     [SerializeField] private GameObject HighScoreMenuAssets;
     [SerializeField] private GameObject PauseGameOverMenuAssets;
@@ -26,7 +28,8 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private ScoreKeeper scoreKeeper;
 
     private bool gamefocus = true;
-    private bool onPlayScreen = false;
+    private bool playToSettings = false;
+    [HideInInspector] public bool onPlayScreen = false;
 
     private void OnApplicationFocus(bool focus)
     {
@@ -37,6 +40,13 @@ public class MenuNavigator : MonoBehaviour
         else if (focus && !gamefocus && onPlayScreen)
         {
             gamefocus = true;
+            GameToPauseScreen();
+        }
+    }
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape) && onPlayScreen)
+        {
             GameToPauseScreen();
         }
     }
@@ -63,14 +73,17 @@ public class MenuNavigator : MonoBehaviour
         HomeMenuCanvas.SetActive(true);
         HomeMenuAssets.SetActive(true);
         scoreKeeper.GameStarted(false);
+        onPlayScreen = false;
+
     }
 
     public void ShowGameOverScreen()
     {
+        onPlayScreen = false;
         PlayScreenCanvas.transform.Find("RestartButton").gameObject.SetActive(true);
         PlayScreenCanvas.transform.Find("Game Over").gameObject.SetActive(true);
         PlayScreenCanvas.transform.Find("GoHomeButton").gameObject.SetActive(true);
-        PlayScreenCanvas.transform.Find("PauseButton").gameObject.SetActive(false);
+        PlayScreenCanvas.transform.Find("AdsBannerRegion").gameObject.SetActive(false);
     }
 
     public void HideGameOverScreen()
@@ -78,7 +91,7 @@ public class MenuNavigator : MonoBehaviour
         PlayScreenCanvas.transform.Find("RestartButton").gameObject.SetActive(false);
         PlayScreenCanvas.transform.Find("Game Over").gameObject.SetActive(false);
         PlayScreenCanvas.transform.Find("GoHomeButton").gameObject.SetActive(false);
-        PlayScreenCanvas.transform.Find("PauseButton").gameObject.SetActive(true);
+        PlayScreenCanvas.transform.Find("AdsBannerRegion").gameObject.SetActive(true);
     }
 
     public void PlayToStartGame()
@@ -93,7 +106,7 @@ public class MenuNavigator : MonoBehaviour
 
     public void GameToPauseScreen()
     {
-        Time.timeScale = 0;
+        scoreKeeper.GameIsPaused(true);
         PlayScreenCanvas.SetActive(false);
         PauseGameOverMenuAssets.SetActive(true);
         PauseMenuCanvas.SetActive(true);
@@ -107,7 +120,7 @@ public class MenuNavigator : MonoBehaviour
         PlayScreenCanvas.SetActive(true);
         PauseGameOverMenuAssets.SetActive(false);
         PauseMenuCanvas.SetActive(false);
-        Time.timeScale = 1;
+        scoreKeeper.GameIsPaused(false);
     }
 
     public void PauseScreenToHome()
@@ -128,6 +141,7 @@ public class MenuNavigator : MonoBehaviour
         PauseGameOverMenuAssets.SetActive(false);
         PauseMenuCanvas.SetActive(false);
         scoreKeeper.RestartGame();
+        scoreKeeper.GameIsPaused(false);
     }
 
     public void HomeToSkinsMenu()
@@ -156,10 +170,22 @@ public class MenuNavigator : MonoBehaviour
 
     public void SettingsToHome()
     {
-        HomeMenuCanvas.SetActive(true);
-        HomeMenuAssets.SetActive(true);
-        SettingsMenuCanvas.SetActive(false);
-        SettingsMenuAssets.SetActive(false);
+        if (playToSettings)
+        {
+            SettingsMenuCanvas.SetActive(false);
+            SettingsMenuAssets.SetActive(false);
+            PauseGameOverMenuAssets.SetActive(true);
+            PauseMenuCanvas.SetActive(true);
+            onPlayScreen = true;
+            playToSettings = false;
+        }
+        else
+        {
+            HomeMenuCanvas.SetActive(true);
+            HomeMenuAssets.SetActive(true);
+            SettingsMenuCanvas.SetActive(false);
+            SettingsMenuAssets.SetActive(false);
+        }
     }
 
     public void SettingsToSensitivity()
@@ -197,5 +223,32 @@ public class MenuNavigator : MonoBehaviour
         DailyRewardsMenuCanvas.SetActive(false);
         DailyRewardsMenuAssets.SetActive(false);
         Time.timeScale = 0;
+    }
+
+    public void PauseMenuToSettings()
+    {
+        PauseGameOverMenuAssets.SetActive(false);
+        PauseMenuCanvas.SetActive(false);
+        SettingsMenuAssets.SetActive(true);
+        SettingsMenuCanvas.SetActive(true);
+        onPlayScreen = false;
+        playToSettings = true;
+    }
+
+    public void HomeAppPopup(string status)
+    {
+        if (status == "show")
+        {
+            CloseAppPopupMenuCanvas.SetActive(true);
+        }
+        else if (status == "hide")
+        {
+            CloseAppPopupMenuCanvas.SetActive(false);
+        }
+    }
+
+    public void CloseApp()
+    {
+        Application.Quit();
     }
 }

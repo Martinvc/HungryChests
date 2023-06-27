@@ -11,6 +11,7 @@ public class ChestController : MonoBehaviour
     [SerializeField] private Transform limitRight;
     [SerializeField] private MainCheastOpenClose chestAnimator;
     [SerializeField] private bool isSettingsChest = false;
+    [SerializeField] private int screenInputOffset;
     private Touch touch;
     private bool isTouching = false;
     public bool chestOpenAnimation = false;
@@ -88,7 +89,7 @@ public class ChestController : MonoBehaviour
     private void GamePlayChestMove()
     {
         // If the game detects input (touch) on the lowest 1/3 portion of the screen it will allow movement
-        if (Input.touchCount > 0 && (Input.GetTouch(0).position.y <= Screen.height / 3))
+        if (Input.touchCount > 0 && (Input.GetTouch(0).position.y <= (Screen.height / 3) + screenInputOffset))
         {
             openChest();
             touch = Input.GetTouch(0);
@@ -117,7 +118,7 @@ public class ChestController : MonoBehaviour
 
     private void SensitivityChestMove()
     {
-        if (Input.touchCount > 0 && (Input.GetTouch(0).position.y <= Screen.height / 3))
+        if (Input.touchCount > 0 && (Input.GetTouch(0).position.y <= (Screen.height / 3) + screenInputOffset))
         {
             openChest();
             touch = Input.GetTouch(0);
