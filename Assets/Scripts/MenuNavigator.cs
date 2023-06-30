@@ -25,12 +25,18 @@ public class MenuNavigator : MonoBehaviour
     [SerializeField] private GameObject DailyRewardsMenuAssets;
 
     [SerializeField] private UpdateHighScores loadScores;
-    [SerializeField] private ScoreKeeper scoreKeeper;
+    private ScoreKeeper scoreKeeper;
+    private SkinsGridHandler skinsGridHandler;
 
     private bool gamefocus = true;
     private bool playToSettings = false;
     [HideInInspector] public bool onPlayScreen = false;
 
+    private void Start()
+    {
+        scoreKeeper = GetComponent<ScoreKeeper>();
+        skinsGridHandler = GetComponent<SkinsGridHandler>();
+    }
     private void OnApplicationFocus(bool focus)
     {
         if (!focus)
@@ -148,6 +154,8 @@ public class MenuNavigator : MonoBehaviour
     {
         HomeMenuCanvas.SetActive(false);
         HomeMenuAssets.SetActive(false);
+        skinsGridHandler.SelectedSkinIndex(PlayerPrefs.GetInt("skinIndex"));
+        skinsGridHandler.RemoveLockIcon();
         SkinsMenuCanvas.SetActive(true);
         SkinsMenuAssets.SetActive(true);
     }

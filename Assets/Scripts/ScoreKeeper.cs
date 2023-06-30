@@ -13,6 +13,7 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] private Text lifesText;
     [SerializeField] private MenuNavigator menuNavigator;
     [SerializeField] private ObjectSpawner objectSpawner;
+    [SerializeField] private float pointToGoldFactor;
     public GameObject chest;
     [HideInInspector] public int[] highScores;
 
@@ -80,7 +81,7 @@ public class ScoreKeeper : MonoBehaviour
     public void SaveScores()
     {
         //update gold
-        PlayerPrefs.SetInt("gold", points + PlayerPrefs.GetInt("gold"));
+        PlayerPrefs.SetInt("gold", PlayerPrefs.GetInt("gold") + (int)(points * pointToGoldFactor));
         for (int i = 0; i < highScores.Length; i++)
         {
             if (points > highScores[i] && highScores[i] != 0)

@@ -515,8 +515,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Generation\Targets\Fullscreen\FullscreenMetaData.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Importers\ShaderGraphMetadata.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Util\FunctionRegistry.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Nodes\Input\Texture\SampleTexture3DNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Nodes\Input\Geometry\TangentVectorNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Nodes\Input\Texture\SampleTexture3DNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Nodes\Input\Matrix\TransformationMatrixNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Graphs\TangentMaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.7\Editor\Data\Nodes\Math\Interpolation\InverseLerpNode.cs" />
